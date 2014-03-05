@@ -24,6 +24,12 @@ SpaApp.Views.TodosIndex = Backbone.View.extend({
   // just rendering the view
   // is 'model' the individual todo item?
 
+// linking from here to the describe view
+  description: function(param){
+    var view = new App.Views.Other({model: param});
+    $('#main').html(view.render().$el);
+  },
+
   add: function(event) {
     event.preventDefault();
     // what is prevent default doing?
