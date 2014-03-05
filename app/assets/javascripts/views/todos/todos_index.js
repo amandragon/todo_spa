@@ -6,6 +6,9 @@ SpaApp.Views.TodosIndex = Backbone.View.extend({
   events: {
     'submit #addTodo':                'add'
   },
+  // mentions the events that will happen on this page
+  // 'this' refers to the above
+  // references the closest object it's associated with
 
   render: function() {
     $(this.el).html(this.template());
@@ -18,14 +21,18 @@ SpaApp.Views.TodosIndex = Backbone.View.extend({
 
     return this;
   },
+  // just rendering the view
+  // is 'model' the individual todo item?
 
   add: function(event) {
     event.preventDefault();
+    // what is prevent default doing?
     
     var newTodo = {
       title: $("#todo_title").val(),
       completed: false
     };
+    // adding a new todo
 
     $.ajax({
       type: "POST",
@@ -38,3 +45,7 @@ SpaApp.Views.TodosIndex = Backbone.View.extend({
     });
   }
 });
+// ajax is making a request to the post route-kind of like a form but in JS
+// getting data from the server
+// can send and recieve data on the same page
+// it's being called for the add function

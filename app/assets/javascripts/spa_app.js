@@ -17,3 +17,4 @@ window.SpaApp = {
 $(document).ready(function(){
   SpaApp.initialize();
 });
+// this is where the routes go?

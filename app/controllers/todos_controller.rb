@@ -39,4 +39,8 @@ class TodosController < ApplicationController
     @todo = Todo.find(params[:id])
     render :json => @todo, only: [:id, :title, :completed, :description]
   end
+
+  def describe
+
+  end
 end
